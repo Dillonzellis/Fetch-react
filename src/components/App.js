@@ -1,13 +1,14 @@
-import CountButton from "./CountButton";
-import Header from "./Header";
+import CountButton from "./CountButton/CountButton";
+import Header from "./Header/Header";
 
-import "./styles/App.css";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <CountButton />
+      <CountButton incrementBy={1} />
+      <CountButton incrementBy={5} />
     </div>
   );
 }
