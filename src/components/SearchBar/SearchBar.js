@@ -14,6 +14,10 @@ const SearchBar = (props) => {
 
   const shouldDisplayButton = searchValue.length > 0;
 
+  const filterProducts = props.products.filter((product) => {
+    return product.includes(searchValue);
+  });
+
   return (
     <div>
       <input
@@ -24,6 +28,12 @@ const SearchBar = (props) => {
         onChange={searchValueHandler}
       />
       {shouldDisplayButton && <button onClick={clearBtnHandler}>Clear</button>}
+
+      <ul>
+        {filterProducts.map((product) => {
+          return <li key={product}>{product}</li>;
+        })}
+      </ul>
     </div>
   );
 };
